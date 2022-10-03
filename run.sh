@@ -26,11 +26,11 @@ sudo apt install net-tools
 
 #5. VNC
 sudo apt install tigervnc-standalone-server
-vncpasswd
+#vncpasswd
 cp tigervnc.conf ~/.vnc
-sudo vi /etc/tigervnc/vncserver.users -> :2=$1
-sudo systemctl enable tigervncserver@:2.service
-sudo systemctl start tigervncserver@:2.service
+#sudo vi /etc/tigervnc/vncserver.users -> :2=$1
+#sudo systemctl enable tigervncserver@:2.service
+#sudo systemctl start tigervncserver@:2.service
 
 #6. GNOME Disable Sleep
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
@@ -41,5 +41,4 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.gnome-flashback notifications 'false'
 
 #8. GNOME Disable Notification
-sudo cp color.pka /etc/polkit-1/localauthority/50-local.d
-sudo cp repo.pka /etc/polkit-1/localauthority/50-local.d
+sudo cp 45-remote-desktop-sanity.pkla /etc/polkit-1/localauthority/50-local.d
